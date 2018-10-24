@@ -1,0 +1,17 @@
+<ion-view view-title="Blog Detail">
+  <ion-content >
+  	<div class="featured-image" style="background-image: url('{{f_image.source_url}}')">
+  	 <div class="overlay"></div>
+  	 <div class="featured-title">
+  	 <h1>{{datapost.title.rendered}}</h1>
+    <h4>By {{author.name}} on {{datapost.date | date}}</h4>
+    <p><span class="badge badge-positive" ng-repeat="category in categories">{{category.name}}</span></p>
+</div>
+  	</div>
+  	 <div class="container">
+    
+    <div ng-bind-html="datapost.content.rendered"></div>
+</div>
+   <!--  <img src="{{author.avatar_urls['96']}}" /> -->
+  </ion-content>
+</ion-view>

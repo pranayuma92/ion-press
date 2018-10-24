@@ -1,0 +1,24 @@
+<ion-view view-title="Blog">
+  <ion-content>
+    <!-- <ion-list>
+      <ion-item ng-repeat="dataPost in posts" href="#/app/playlists/{{dataPost.id}}">
+        {{dataPost.title.rendered}}
+        <div ng-bind-html="dataPost.excerpt.rendered"></div>
+      </ion-item>
+    </ion-list> -->
+    <div class="card" ng-repeat="dataPost in posts" ui-sref="app.single({id : dataPost.id})">
+  <div class="item item-text-wrap featured-image" style="background-image: url('{{dataPost._embedded['wp:featuredmedia'][0].source_url}}')">
+  	<div class="overlay-two"></div>
+  	 <div class="featured-title-two">
+  	 <p><span class="badge-cat" ng-repeat="category in dataPost._embedded['wp:term'][0]">{{category.name}}</span></p>
+    <h1>{{dataPost.title.rendered}}</h1>
+    <p>
+    	<span class="card-act"><i class="icon ion-ios-clock-outline"></i> {{dataPost.date | date}}</span>
+    	<span class="card-act"><i class="icon ion-ios-chatbubble-outline"></i> {{dataPost._embedded['replies'][0].length}}</span>
+    </p>
+</div>
+</div>
+  </div>
+  </ion-content>
+</ion-view>
+
